@@ -6,10 +6,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     searchBtn.addEventListener("click", () => {
         const locationText = textInput.value;
-        const city = cityName.value;
-        //console.log(locationText);
+        console.log(locationText, city);
+
         city.innerHTML = locationText;
-            fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=80c255a228badc45bbb54804317acd5e`)
+            fetch(`https://api.openweathermap.org/data/2.5/weather?q=${locationText}&appid=80c255a228badc45bbb54804317acd5e`)
             .then((response) => response.json())
             .then((data) => {
                const cityName = data.name; 
